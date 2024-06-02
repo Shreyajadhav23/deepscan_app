@@ -67,12 +67,11 @@ def home(mtcnn,model):
             result(pred)
         
 def result(pred):
-    st.markdown("<h3><b>Result</b></h3>", unsafe_allow_html=True) 
+    st.markdown("<h3 style='text-decoration: underline;'><b>Result :</b></h3>", unsafe_allow_html=True) 
     if pred == "Real":
-                st.success(f"**{pred}**")  # Display "Real" prediction in green color
+        st.markdown("<p style='font-size:24px; color:green;  font-family: Times New Roman, Times, serif;padding-left: 100px;'><b>🟢 Real</b></p>", unsafe_allow_html=True)
     else:
-                st.error(f"**{pred}**")
-    st.info("Note: Our deepfake detector is under development (~62% accuracy). We're aiming for 80%+ soon! For now, results may be unreliable. Double-check suspicious images using fact-checkers or reverse image search. Thanks for your patience!")
+        st.markdown("<p style='font-size:24px; color:red;  font-family: Times New Roman, Times, serif;padding-left: 100px;'><b>🔴 Fake</b></p>", unsafe_allow_html=True)
 
 def contact():
     st.markdown(
